@@ -1,0 +1,36 @@
+{
+  "name": "honeycombs-api-server",
+  "version": "1.0.0",
+  "description": "honeycombs api server app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "prod": "node server.js"
+  },
+  "author": "idksapr@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.8.1",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-method-override": "0.0.3",
+    "mongoose": "^4.6.3",
+    "mustache": "^2.3.0",
+    "nconf": "^0.8.4",
+    "oauth2orize": "^1.5.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-oauth2-client-password": "^0.1.2",
+    "request": "^2.79.0",
+    "validator": "^6.0.0",
+    "winston": "^2.2.0"
+  }
+}

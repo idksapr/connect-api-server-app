@@ -1,0 +1,76 @@
+{
+    "domain": "localhost",
+    "protocol": "http",
+    "port": 3002,
+    "db": {
+        "mongoTest": {
+            "uri": "mongodb://connectone:st02114@localhost/connectone"
+        }
+    },
+    "security": {
+        "tokenLife" : 3600
+    },
+    "userRoles": ["admin", "client", "company_admin", "company_manager", "developer"],
+    "currencies": ["USD", "EUR", "RUB"],
+    "RBAC": {
+        "company": {
+            "read": ["client", "company_admin", "company_manager", "guest", "admin"],
+            "insert": ["company_admin", "admin"],
+            "update": ["company_admin", "admin"],
+            "remove": ["company_admin", "admin"]
+        },
+        "note": {
+            "read": ["client", "company_admin", "company_manager", "guest", "admin"],
+            "insert": ["company_admin", "company_manager", "admin"],
+            "update": ["company_admin", "owner", "admin"],
+            "remove": ["company_admin", "owner", "admin"]
+        },
+        "service": {
+            "read": ["client", "company_admin", "company_manager", "admin"],
+            "insert": ["company_admin", "admin"],
+            "update": ["company_admin", "admin"],
+            "remove": ["company_admin", "admin"]
+        },
+        "user": {
+            "client": {
+                "read": ["owner", "company_admin", "company_manager", "admin"],
+                "insert": ["admin"],
+                "update": ["owner", "admin"],
+                "remove": ["owner", "admin"],
+                "push_unset_company": ["owner", "company_admin", "admin"]
+            },
+            "company_manager": {
+                "read": ["owner", "company_admin", "admin"],
+                "insert": ["admin", "company_admin"],
+                "update": ["owner", "admin"],
+                "remove": ["owner", "admin"],
+                "push_unset_company": ["company_admin", "admin"]
+            },
+            "company_admin": {
+                "read": ["owner", "company_admin", "admin"],
+                "insert": ["admin", "company_admin"],
+                "update": ["owner", "admin"],
+                "remove": ["owner", "admin"],
+                "push_unset_company": ["company_admin", "admin"]
+            },
+            "developer": {
+                "read": ["owner", "admin"],
+                "insert": ["admin"],
+                "update": ["owner", "admin"],
+                "remove": ["owner", "admin"]
+            },
+            "admin": {
+                "read": ["owner", "admin"],
+                "insert": ["admin"],
+                "update": ["owner", "admin"],
+                "remove": ["owner", "admin"]
+            }
+        },
+        "clientapp": {
+            "read": ["admin", "developer"],
+            "insert": ["admin", "developer"],
+            "update": ["admin", "owner"],
+            "remove": ["admin", "owner"]
+        }
+    }
+}

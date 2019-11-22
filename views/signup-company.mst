@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Connectone - Company Registration</title>
+    <link rel="stylesheet" href="public/styles/main.css">
+</head>
+<body>
+    <div class="content">
+
+        <!-- Форма регистрации компании -->
+        <form class="form preview-form" action="#">
+            <div class="form-h1">
+                <div class="form-h1-logo"></div>
+                <div class="form-h1-title">Connectone</div>
+                <div class="form-h1-subtitle">Company registration</div>
+            </div>
+            <label class="form-label form-label__solo" for="login">Login (E-Mail):</label>
+            <input name="login" type="email" class="form-input" required >
+            <input class="form-button form-button__solo" type="submit" value="Sign Up">
+        </form>
+        <!-- End - Форма регистрации компании -->
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+// Main Styles for Form
+
+	.form {
+		
+		position: relative;
+		width: $layout-offset*10;
+		padding: $layout-offset;
+		background: $color-white;
+		font-size: $font-size-small;
+		border-radius: $layout-offset;
+		text-align: left;
+
+		@include material-shadow-big(1);
+
+		&-h1 {
+
+			color: $palette-grey-800;
+
+			&-logo {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -$layout-offset;
+				margin-top: -$layout-offset;
+				vertical-align: middle;
+				width: $layout-offset*2;
+				height: $layout-offset*2;
+				border-radius: 100%;
+				background: $color-primary;
+			}
+
+			&-title {
+				line-height: $layout-offset*1.25;
+				margin-top: $layout-offset/2;
+				width: 100%;
+				text-align: center;
+				font-size: $layout-offset;
+				font-weight: $font-weight-normal;
+			}
+
+			&-subtitle {
+				padding-top: $layout-offset/2;
+				font-size: $font-size-small;
+				color: $palette-grey-500;
+				text-align: center;
+				border-radius: 4px;
+			}
+		}
+
+		&-label {
+			display: block;
+			margin-top: $layout-offset;
+			margin-bottom: $layout-offset/4;
+			color: $palette-grey-500;
+			font-weight: $font-weight-normal;
+			font-size: $font-size-tiny;
+		}
+
+		&-input {
+			width: 100%;
+			padding: $layout-offset/4;
+			padding-left: 0;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid $palette-grey-400;
+
+			&::selection {
+				background-color: $palette-grey-400;
+			}
+
+			&:valid {
+				border-bottom: 1px solid $color-primary;
+			}
+		}
+
+		&-radio {
+			margin-top: $layout-offset/2;
+			vertical-align: bottom;
+			
+			&-last {
+				margin-left: $layout-offset;
+			}
+		}
+		&-radio-label {
+			margin-left: $layout-offset/4;
+			vertical-align: bottom;
+			color: $palette-grey-700;
+		}
+
+		&-button {
+			display: block;
+			width: $layout-offset*4;
+			margin: auto;
+			margin-top: $layout-offset;
+			padding: $layout-offset/4 $layout-offset;
+			background: $color-primary;
+			font-size: $font-size-small;
+			border: 1px solid $color-primary;
+			border-radius: 4px;
+			color: $color-white;
+
+			&:hover {
+				background: none;
+				color: $color-primary;
+				border: 1px solid;
+			}
+		}
+	}
+
+	// Solo Input Styles
+
+		.form-label__solo {
+			margin-top: $layout-offset*2;
+		}
+
+		.form-button__solo {
+			margin-top: $layout-offset*2;
+		}
+
+	// End - Solo Input Styles
+
+
+// End - Main Styles for Form
+
+
+
+
+
+// Preview Styles 
+
+	.preview-form {
+		display: inline-block;
+		vertical-align: top;
+		margin: $layout-offset;
+	}
+
+// End - Preview Styles

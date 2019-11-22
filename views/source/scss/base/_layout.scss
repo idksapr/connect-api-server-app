@@ -1,0 +1,84 @@
+* { 	
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+	box-sizing: border-box;
+	&::selection {
+		background: none;
+	}
+}
+
+html {    
+	height: 100%;
+	width: 100%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: $layout-offset;
+	background: $color-background;
+	background-size: cover;
+	color: $color-font;
+	cursor: default;
+	width: 100%;
+	height: 100%;
+	min-height: 660px;
+	overflow-x: hidden;
+
+    @media screen and (max-width: 1240px) {
+	    align-items: flex-start;
+    }
+
+	.bg-dark {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		content: '';
+		background: $color-overlay;
+	}
+}
+
+.content {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.flex-container {
+	min-height: 100%;
+	position: relative;
+}
+
+.container {
+	position: relative;
+	max-width: 1020px;
+	margin: auto; 
+}
+
+.button, 
+input[type="radio"],
+label[for="current"],
+label[for="demo"], {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: $color-font;
+
+	&:hover {
+		color: $color-link-hover;
+	}
+}
+
+input {
+	outline: none;
+}

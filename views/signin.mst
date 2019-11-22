@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Connectone - Sign In</title>
+  <link rel="stylesheet" href="/public/styles/main.css">
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div class="content">
+
+        <form id="signin-form" class="form preview-form">
+            <div class="form-h1">
+                <!-- <div class="form-h1-logo"></div> -->
+                <div class="form-h1-title">Connectone</div>
+            </div>
+            <label class="form-label" for="login">Login (E-Mail):</label>
+            <input name="username" type="email" class="form-input login-data" required >
+            <label class="form-label" for="password">Password:</label>
+            <input name="password" type="password" class="form-input login-data" required>
+						<input name="client_id" type="hidden" class="form-input login-data" value={{client_id}} required >
+						<input name="client_secret" type="hidden" class="form-input login-data" value={{client_secret}} required >
+						<input name="grant_type" type="hidden" class="form-input login-data" value="password" required >
+						<input name="callback_url" type="hidden" class="form-input login-data" value="{{callback_url}}" required >
+						<input name="state" type="hidden" class="form-input login-data" value="{{state}}" required >
+            <input class="form-button" type="submit" value="Sign In">
+						<br />
+						<span id="error-container"></span>
+        </form>
+    </div>
+
+		<script type="text/javascript" >
+	      (function($) {
+		        $(document).ready(function() {
+				        $('#signin-form').submit(function() {
+									  $.ajax({
+											  type: "POST",
+									      url: "/access-point/login-ajax",
+												data: $(this).serialize(),
+												dataType: "json",
+									      success: function(data) {
+													  if (data.callback_url) {
+															  window.location.replace(data.callback_url);
+													  } else {
+															  const message = data.error ?
+																    data.error + ': ' + data.error_description :
+																		'Unknown error';
+																$('#error-container').html(message);
+														}
+									      }
+									  });
+										return false;
+				        });
+			      });
+	      })(jQuery);
+    </script>
+</body>
+</html>
