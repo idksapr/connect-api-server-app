@@ -21,7 +21,7 @@
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-method-override": "0.0.3",
-    "mongoose": "^4.6.3",
+    "mongoose": "^5.7.12",
     "mustache": "^2.3.0",
     "nconf": "^0.8.4",
     "oauth2orize": "^1.5.1",
